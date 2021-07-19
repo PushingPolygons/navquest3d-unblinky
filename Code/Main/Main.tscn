@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scenes/Primitives.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/NavQuest.tscn" type="PackedScene" id=2]
 
 [node name="Main" type="Node"]
-
-[node name="Primitives" parent="." instance=ExtResource( 1 )]
-visible = false
 
 [node name="CameraPivot" type="Spatial" parent="."]
 transform = Transform( 0.758351, -0.420853, 0.497783, 0, 0.76365, 0.645631, -0.651847, -0.489615, 0.579114, 0, 0, 0 )
