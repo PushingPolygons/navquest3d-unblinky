@@ -19,15 +19,10 @@ sky_material = SubResource("ProceduralSkyMaterial_27205")
 background_mode = 2
 sky = SubResource("Sky_0u3kk")
 tonemap_mode = 2
-ssao_enabled = true
 ssao_radius = 0.59
 ssao_intensity = 0.54
 ssil_radius = 4.45
-sdfgi_enabled = true
-glow_enabled = true
-fog_enabled = true
 fog_light_color = Color(0.286275, 0.0117647, 0.278431, 1)
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.0373
 volumetric_fog_albedo = Color(0.564706, 0.129412, 0.533333, 1)
 
@@ -55,30 +50,6 @@ albedo_texture = ExtResource("2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_uemj6")
-
-[node name="Lights" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-
-[node name="OmniLight" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.526022, 10.8493, -31.7303)
-light_color = Color(0, 0.0431373, 0.0980392, 1)
-shadow_enabled = true
-omni_range = 41.4562
-omni_attenuation = 2.2974
-
-[node name="OmniLight2" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.8679, 10.8493, 22.8646)
-light_color = Color(0.203922, 0, 0.109804, 1)
-shadow_enabled = true
-omni_range = 41.4562
-omni_attenuation = 2.2974
-
-[node name="OmniLight3" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.2379, 13.2369, 23.5015)
-light_color = Color(0, 0.0431373, 0, 1)
-shadow_enabled = true
-omni_range = 41.4562
-omni_attenuation = 2.2974
 
 [node name="Primatives" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -131,12 +102,13 @@ material_override = ExtResource("1_0f743")
 mesh = SubResource("9")
 
 [node name="Top" type="MeshInstance3D" parent="Primatives"]
-transform = Transform3D(3.69355, 0, 0, 0, 1.25928, 0, 0, 0, 3.69355, 0, 6.82816, 0)
+transform = Transform3D(3.69355, 0, 0, 0, 1.25928, 0, 0, 0, 3.69355, 0, 4.46224, 0)
 material_override = ExtResource("1_0f743")
 mesh = SubResource("6")
 
 [node name="LightPivot" type="Node3D" parent="Primatives/Top"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.53729, 0)
+visible = false
 
 [node name="SpotLight" type="SpotLight3D" parent="Primatives/Top/LightPivot"]
 transform = Transform3D(1, 0, 0, 0, -0.886082, 0.463528, 0, -0.463528, -0.886082, 0, -4.48861, 1.00003)
@@ -148,6 +120,7 @@ spot_angle_attenuation = 0.0980732
 
 [node name="LightPivot2" type="Node3D" parent="Primatives/Top"]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 3.53729, 0)
+visible = false
 
 [node name="SpotLight" type="SpotLight3D" parent="Primatives/Top/LightPivot2"]
 transform = Transform3D(1, 0, 0, 0, -0.886082, 0.463528, 0, -0.463528, -0.886082, 0, -4.48861, 1.00003)
@@ -160,6 +133,7 @@ spot_angle_attenuation = 0.420448
 
 [node name="LightPivot3" type="Node3D" parent="Primatives/Top"]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 3.53729, 0)
+visible = false
 
 [node name="SpotLight" type="SpotLight3D" parent="Primatives/Top/LightPivot3"]
 transform = Transform3D(1, -2.67927e-07, -3.45053e-07, -7.74638e-08, -0.886082, 0.463528, -4.29937e-07, -0.463528, -0.886082, 2.98023e-07, -4.48861, 1.00003)
@@ -172,6 +146,7 @@ spot_angle_attenuation = 0.196146
 
 [node name="LightPivot4" type="Node3D" parent="Primatives/Top"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.53729, 0)
+visible = false
 
 [node name="SpotLight" type="SpotLight3D" parent="Primatives/Top/LightPivot4"]
 transform = Transform3D(1, 0, 0, 0, -0.886082, 0.463528, 0, -0.463528, -0.886082, 0, -4.48861, 1.00003)
@@ -183,6 +158,7 @@ spot_angle_attenuation = 0.297302
 
 [node name="PurplePivot" type="Node3D" parent="Primatives/Top"]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0, 3.53729, 0)
+visible = false
 
 [node name="SpotLight" type="SpotLight3D" parent="Primatives/Top/PurplePivot"]
 transform = Transform3D(1, -4.68999e-08, 7.74638e-08, -7.74638e-08, -0.886082, 0.463528, 4.68999e-08, -0.463528, -0.886082, 2.98023e-08, -4.48861, 1.00003)
@@ -194,6 +170,7 @@ spot_angle_attenuation = 0.406126
 
 [node name="LightPivot6" type="Node3D" parent="Primatives/Top"]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 3.53729, 0)
+visible = false
 
 [node name="SpotLight" type="SpotLight3D" parent="Primatives/Top/LightPivot6"]
 transform = Transform3D(1, 0, 0, 0, -0.886082, 0.463528, 0, -0.463528, -0.886082, 0, -4.48861, 1.00003)
@@ -233,6 +210,7 @@ mesh = SubResource("7")
 
 [node name="Right" type="MeshInstance3D" parent="TrickCube"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1, 1, 0)
+visible = false
 mesh = SubResource("7")
 
 [node name="Front" type="MeshInstance3D" parent="TrickCube"]
@@ -248,3 +226,7 @@ mesh = SubResource("8")
 transform = Transform3D(0.437481, 0, 0, 0, 0.437481, 0, 0, 0, 0.437481, 17.1371, 1.0084, 19.6737)
 material_override = SubResource("StandardMaterial3D_dnw3g")
 mesh = SubResource("12")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.321655, 0.946857, 0, -0.946857, 0.321655, 0, 15, 4.13884)
+shadow_enabled = true

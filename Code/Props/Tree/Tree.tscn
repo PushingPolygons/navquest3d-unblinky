@@ -129,7 +129,3 @@ transform = Transform3D(0.120923, -0.587412, 0.252338, 0.611643, 0.181036, 0.128
 
 [node name="Bunch_E6" parent="." instance=ExtResource("5")]
 transform = Transform3D(0.137394, -0.667424, 0.286709, 0.694957, 0.205696, 0.145805, -0.211407, 0.242422, 0.665638, 4.23922, 11.3839, -1.02847)
-
-[node name="DirectionalLight" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.52293, 0.852376, 0, -0.852376, 0.52293, 0, 30.1577, 19.9446)
-visible = false
